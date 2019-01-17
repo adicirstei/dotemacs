@@ -5,8 +5,11 @@
 
   ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
   (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t))
-(when (not package-archive-contents)
-    (package-refresh-contents))
+
+;(when (not package-archive-contents)
+;    (package-refresh-contents))
+
+
 (package-initialize)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
