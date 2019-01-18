@@ -24,7 +24,8 @@
     ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (counsel powerline spacemacs-theme rainbow-delimiters cider))))
+    (company counsel powerline spacemacs-theme rainbow-delimiters cider)))
+ '(recentf-max-saved-items 100))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -41,7 +42,15 @@
  '(rainbow-delimiters-depth-9-face ((t (:inherit rainbow-delimiters-base-face :foreground "blue violet")))))
 
  
- 
+;; some global settings
+(recentf-mode t)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+(setq recentf-max-saved-items 100)
+(setq recentf-max-menu-items 10)
+(setq make-backup-files nil)
+
+
+
 
  
 ;; powerline config
@@ -49,9 +58,11 @@
 (powerline-default-theme)
 
 
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'clojure-mode-hook 'display-line-numbers-mode)
-(add-hook 'clojurescript-mode-hook 'eldoc-mode)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'cider-mode-hook 'eldoc-mode)
+(add-hook 'cider-mode-hook #'company-mode)
+(add-hook 'cider-repl-mode-hook #'company-mode)
 
 
 ;; configure ivy
