@@ -49,7 +49,7 @@
 (setq recentf-max-menu-items 10)
 (setq make-backup-files nil)
 
-
+(scroll-bar-mode 0)
 
 
  
