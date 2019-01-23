@@ -24,7 +24,7 @@
     ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (company counsel powerline spacemacs-theme rainbow-delimiters cider)))
+    (clj-refactor company counsel powerline spacemacs-theme rainbow-delimiters cider)))
  '(recentf-max-saved-items 100))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -52,6 +52,14 @@
 (scroll-bar-mode 0)
 
 
+;; clj-refactor settings
+(require 'clj-refactor)
+(defun my-clojure-mode-hook ()
+    (clj-refactor-mode 1)
+    (yas-minor-mode 1) ; for adding require/use/import statements
+    ;; This choice of keybinding leaves cider-macroexpand-1 unbound
+    (cljr-add-keybindings-with-prefix "C-c C-m"))
+
  
 ;; powerline config
 (require 'powerline)
@@ -63,6 +71,7 @@
 (add-hook 'cider-mode-hook 'eldoc-mode)
 (add-hook 'cider-mode-hook #'company-mode)
 (add-hook 'cider-repl-mode-hook #'company-mode)
+(add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
 
 
 ;; configure ivy
