@@ -24,7 +24,7 @@
     ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (clj-refactor company counsel powerline spacemacs-theme rainbow-delimiters cider)))
+    (clojure-snippets clj-refactor company counsel powerline spacemacs-theme rainbow-delimiters cider)))
  '(recentf-max-saved-items 100))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
